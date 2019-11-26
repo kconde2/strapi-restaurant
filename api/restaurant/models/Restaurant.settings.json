@@ -2,7 +2,7 @@
   "connection": "default",
   "collectionName": "articles",
   "info": {
-    "name": "articles",
+    "name": "restaurant",
     "description": ""
   },
   "options": {
@@ -14,16 +14,17 @@
     "comment": ""
   },
   "attributes": {
-    "title": {
-      "type": "text"
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
-    "content": {
+    "description": {
       "type": "richtext"
     },
-    "user": {
-      "model": "user",
-      "via": "articles",
-      "plugin": "users-permissions"
+    "categories": {
+      "collection": "category",
+      "via": "restaurants"
     }
   }
 }
